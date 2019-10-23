@@ -1,0 +1,92 @@
+package br.com.holistic.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import br.com.holistic.beans.Matricula;
+import br.com.holistic.beans.Usuario;
+import br.com.holistic.conexao.Conexao;
+
+/**
+ * Classe responsavel por Estabeler a Conexao com o Banco de Dados entre MatriculaDAO e Conexao
+ * DT_INICIO, DT_TERMINO,DS_STATUS_MATRICULA,CD_ALUNO
+ * CD_DISCIPLINA = PK
+ * CD_ALUNO = FK
+ * @author Caue
+ * @version 00.001
+ * @see br.com.holistic.dao
+ */
+public class MatriculaDAO {
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	/**
+	 * Metodo que estabelece conexao entre o MatriculaDAO e Conexao.
+	 * @author Holistic
+	 * @param 
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public MatriculaDAO() throws Exception{
+		con=Conexao.getConnectar();
+	}
+	
+	/**
+	 * Metodo que Cadastra uma nova Matricula no Banco de Dados
+	 * @author Holistic
+	 * @param new Matricula
+	 * @return executeUpdate
+	 * @throws Exception
+	 * 	 
+	 */
+	public int addMatricula(Matricula m) throws Exception{
+			stmt= con.prepareStatement("INSERT INTO T_SCB_MATRICULA(DT_INICIO, DT_TERMINO,DS_STATUS_MATRICULA,CD_ALUNO) WHERE (?,?,?,?)");
+			stmt.setString(1, m.getDataInicio());
+			stmt.setString(2, m.getDataTermino());
+			stmt.setString(3, m.getStatusMatricula());
+			stmt.setString(4, m.getUsuario().getCodigo());
+			
+			return stmt.executeUpdate();
+	}
+	
+	/**
+	 * Metodo que vizualiza uma Matricula em especifico cadastrado
+	 * @author Holistic
+	 * @param usuario
+	 * @return new Matricula
+	 * @throws Exception
+	 * 	 
+	 */	
+	public Matricula getMatricula(Usuario usuario) throws Exception {
+	
+			stmt=con.prepareStatement("SELECT * FROM T_SCB_MATRICULA WHERE CD_ALUNO=?");
+			stmt.setString(1, usuario.getCodigo());
+			
+			rs=stmt.executeQuery();
+			if(rs.next()) {
+				return new Matricula(rs.getString("DT_INICIO"),
+						rs.getString("DT_TERMINO"),
+						rs.getString("DS_STATUS_MATRICULA"),
+						new AlunoDAO().getAluno(rs.getString("CD_CODIGO")));
+				
+			}else {
+				return null;
+			}
+	}
+	
+	/**
+	 * Metodo responsavel por Fechar a conexao com o Banco de Dados
+	 * @author Holistic
+	 * @param 
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public void fechar() throws Exception{
+		con.close();
+	}
+
+}

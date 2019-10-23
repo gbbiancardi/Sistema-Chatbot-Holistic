@@ -1,0 +1,62 @@
+package br.com.holistic.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import br.com.holistic.beans.Disciplina;
+import br.com.holistic.conexao.Conexao;
+
+public class DisciplinaDAO {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	public DisciplinaDAO() throws Exception{
+		con = Conexao.getConnectar();
+		
+	}
+	
+	public int cadastrarDisciplina(Disciplina d) throws Exception{
+		
+		
+		stmt= con.prepareStatement("INSERT INTO T_SCB_DISCIPLINA(CD_DISCIPLINA, NM_DISCIPLINA, DT_INICIO, DT_TERMINO,DS_STATUS_DIS, CD_PROFESSOR) VALUES(?,?,?,?,?,?)");
+		stmt.setInt(1, d.getCodigo());
+		stmt.setString(2, d.getNome());
+		stmt.setString(3, d.getDataInicio());
+		stmt.setString(4, d.getDataTermino());
+		stmt.setString(5, d.getStatusDisciplina());
+		stmt.setString(6, d.getUsuario().getCodigo());
+		return stmt.executeUpdate();
+	}
+	
+	public Disciplina consultarDisciplina(int codigo) throws Exception{
+		stmt=con.prepareStatement("SELECT * FROM T_SCB_DISCIPLINA WHERE CD_DISCIPLINA=?");
+		stmt.setInt(1, codigo);
+		
+		rs =stmt.executeQuery();
+		
+		if(rs.next()) {
+			Disciplina d = new Disciplina();
+			
+			d.setCodigo(rs.getInt("CD_DISCIPLINA"));
+			d.setNome(rs.getString("NM_DISCIPLINA"));
+			d.setDataInicio(rs.getString("DT_INICIO"));
+			d.setDataTermino(rs.getString("DT_TERMINO"));
+			d.setStatusDisciplina(rs.getString("DS_STATUS_DIS"));
+			d.setUsuario(new ProfessorDAO().getProfessors(rs.getString("CD_PROFESSOR")));
+			con.close();
+			return d;
+		}else {
+			con.close();
+			return null;
+		}
+	}
+	
+	
+	public void fechar() throws Exception{
+		con.close();
+	}
+
+}

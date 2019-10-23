@@ -1,0 +1,13 @@
+button{
+    background-color: transparent;
+    height: 100%;
+    width: 80%;
+    border: none;
+    transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-ransition: all .3s ease-in-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #a7a7a7;
+    text-align: justify;
+    margin-left: 9%;
+}

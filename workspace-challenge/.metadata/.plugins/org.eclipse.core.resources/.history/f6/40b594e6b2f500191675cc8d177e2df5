@@ -1,0 +1,50 @@
+package br.com.holistic.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import br.com.holistic.beans.Matricula;
+import br.com.holistic.beans.Usuario;
+import br.com.holistic.conexao.Conexao;
+
+public class MatriculaDAO {
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	public MatriculaDAO() throws Exception{
+		con=Conexao.getConnectar();
+	}
+	public int addMatricula(Matricula m) throws Exception{
+			stmt= con.prepareStatement("INSERT INTO T_SCB_MATRICULA(DT_INICIO, DT_TERMINO,DS_STATUS_MATRICULA,CD_ALUNO) WHERE (?,?,?,?)");
+			stmt.setString(1, m.getDataInicio());
+			stmt.setString(2, m.getDataTermino());
+			stmt.setString(3, m.getStatusMatricula());
+			stmt.setString(4, m.getUsuario().getCodigo());
+			
+			return stmt.executeUpdate();
+	}
+	
+	public Matricula getMatricula(Usuario usuario) throws Exception {
+	
+			stmt=con.prepareStatement("SELECT * FROM T_SCB_MATRICULA WHERE CD_ALUNO=?");
+			stmt.setString(1, usuario.getCodigo());
+			
+			rs=stmt.executeQuery();
+			if(rs.next()) {
+				return new Matricula(rs.getString("DT_INICIO"),
+						rs.getString("DT_TERMINO"),
+						rs.getString("DS_STATUS_MATRICULA"),
+						new AlunoDAO().getAluno(rs.getString("CD_CODIGO")));
+				
+			}else {
+				return null;
+			}
+	}
+	
+	public void fechar() throws Exception{
+		con.close();
+	}
+
+}

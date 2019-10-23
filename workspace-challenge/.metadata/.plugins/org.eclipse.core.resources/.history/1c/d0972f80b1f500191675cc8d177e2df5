@@ -1,0 +1,95 @@
+package br.com.holistic.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import br.com.holistic.beans.Usuario;
+import br.com.holistic.conexao.Conexao;
+
+/**
+ * Classe responsavel por Estabeler a Conexao com o Banco de Dados entre AdministradorDAO e Conexao
+ * CD_ADMINISTRADOR ,NR_SENHA,NM_ADMINISTRADOR,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF
+ * CD_ADMINISTRADOR = PK
+ * @author Holistic
+ * @version 00.001
+ * @see br.com.holistic.dao
+ */
+public class AdministradorDAO {
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	/**
+	 * Metodo que estabelece conexao entre o AdministradorDAO e o Conexao.
+	 * @author Holistic
+	 * @param
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public AdministradorDAO() throws Exception{
+		con = Conexao.getConnectar();
+	}
+
+	/**
+	 * Metodo que Cadastra um novo Administrador no Banco de Dados
+	 * @author Holistic
+	 * @param new Usuario
+	 * @return executeUpdate
+	 * @throws Exception
+	 * 	 
+	 */
+	public int addAdministrador(Usuario u) throws Exception{
+		stmt = con.prepareStatement("INSERT INTO T_SCB_ADMINISTRADOR(CD_ADMINISTRADOR ,NR_SENHA,NM_ADMINISTRADOR,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF)VALUES(?,?,?,?,?,?,?)");
+		
+		stmt.setString(1, "A" + u.getCodigo());
+		stmt.setString(2, u.getSenha());
+		stmt.setString(3, u.getNome());
+		stmt.setString(4, u.getDataNascimento());
+		stmt.setString(5, u.getGenero());
+		stmt.setString(6, u.getEmail());
+		stmt.setString(7, u.getCpf());
+		
+		
+		return stmt.executeUpdate();
+	}
+	
+	/**
+	 * Metodo que vizualiza os Administradores cadastrados
+	 * @author Holistic
+	 * @param codigo, senha
+	 * @return new Usuario
+	 * @throws Exception
+	 * 	 
+	 */
+	public Usuario getAdministrador(String codigo, String senha) throws Exception{
+		
+		
+		
+		stmt = con.prepareStatement("SELECT * FROM T_SCB_ADMINISTRADOR where CD_ADMINISTRADOR=? and NR_SENHA=?");
+		stmt.setString(1, codigo);
+		stmt.setString(2, senha);
+		rs =stmt.executeQuery();
+					
+		if(rs.next()) {
+							
+			return 
+					new Usuario(
+					rs.getString("CD_ADMINISTRADOR"),
+					rs.getString("NR_SENHA"),
+					rs.getString("NM_ADMINISTRADOR"), 
+					rs.getString("DT_NASCIMENTO"),
+					rs.getString("DS_GENERO"), 
+					rs.getString("DS_EMAIL"),
+					rs.getString("NR_CPF"));
+				
+		}else {
+			return null ;
+		}
+		
+	}
+	public void fechar() throws Exception{
+		con.close();
+	}
+}

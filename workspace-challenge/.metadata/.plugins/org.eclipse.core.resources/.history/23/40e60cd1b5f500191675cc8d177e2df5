@@ -1,0 +1,106 @@
+package br.com.holistic.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.holistic.beans.Avaliacao;
+import br.com.holistic.conexao.Conexao;
+
+/**
+ * Classe responsavel por Estabeler a Conexao com o Banco de Dados entre AvaliacaoDAO e Conexao
+ * CD_AVALIACAO, NR_NOTA_DISCIPLINA, CD_DISCIPLINA, CD_CAPITULO, CD_ALUNO
+ * CD_AVALIACAO = PK
+ * @author Holistic
+ * @version 00.001
+ * @see br.com.holistic.dao
+ */
+public class AvaliacaoDAO {
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	/**
+	 * Metodo que estabelece conexao entre o AvalicaoDAO e Conexao.
+	 * @author Holistic
+	 * @param 
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public AvaliacaoDAO() throws Exception{
+		con= Conexao.getConnectar();
+	}
+	
+	/**
+	 * Metodo que Cadastra uma nova Avaliaçao no Banco de Dados
+	 * @author Holistic
+	 * @param new Avaliacao
+	 * @return executeUpdate
+	 * @throws Exception
+	 * 	 
+	 */
+	public int addAvaliacao(Avaliacao a) throws Exception{
+		
+		
+		stmt=con.prepareStatement("INSERT INTO T_SCB_AVALIACAO(CD_AVALIACAO, NR_NOTA_DISCIPLINA, CD_DISCIPLINA, CD_CAPITULO, CD_ALUNO) VALUES(?,?,?,?,?)");
+		stmt.setInt(1, a.getCodigo());
+		stmt.setDouble(2, a.getNota());
+		stmt.setInt(3, a.getDisciplina().getCodigo());
+		stmt.setInt(4, a.getCapitulo().getCodigo());
+		stmt.setString(5, a.getUsuario().getCodigo());
+		
+		return stmt.executeUpdate();
+		
+		
+	}
+	
+	/**
+	 * Metodo que vizualiza todos as avaliaçoes cadastrados
+	 * @author Holistic
+	 * @param 
+	 * @return Usuario
+	 * @throws Exception
+	 * 	 
+	 */
+	public List<Avaliacao> getAvaliacao() throws Exception {
+			
+			List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
+			stmt=con.prepareStatement("SELECT * FROM T_SCB_AVALIACAO");
+			
+			
+			rs=stmt.executeQuery();
+			
+			while(rs.next()) {
+			
+				Avaliacao a = new Avaliacao();
+				a.setCodigo(rs.getInt("CD_AVALIACAO"));
+				a.setNota(rs.getInt("NR_NOTA_DISCIPLINA"));
+				a.setDisciplina(new DisciplinaDAO().consultarDisciplina(rs.getInt("CD_DISCIPLINA")));
+				a.setCapitulo(new CapituloDAO().consultarCapitulo(rs.getInt("CD_CAPITULO")));
+				a.setUsuario(new AlunoDAO().getAluno(rs.getString("CD_ALUNO")));
+				
+				
+				avaliacoes.add(a);
+			}	
+				return avaliacoes;
+			
+			
+	}
+	
+	/**
+	 * Metodo responsavel por Fechar a conexao com o Banco de Dados
+	 * @author Holistic
+	 * @param 
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public void fechar() throws Exception{
+		con.close();
+	}
+	
+
+}

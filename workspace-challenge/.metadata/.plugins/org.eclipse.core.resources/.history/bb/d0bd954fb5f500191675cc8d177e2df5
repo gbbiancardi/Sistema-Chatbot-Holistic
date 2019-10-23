@@ -1,0 +1,58 @@
+package br.com.holistic.bo;
+
+import java.util.List;
+
+import br.com.holistic.beans.Avaliacao;
+import br.com.holistic.dao.AvaliacaoDAO;
+
+/**
+ * Classe responsavel por definir as Regras de Negocio da Avaliação
+ * @author Equipe Holistic
+ * @version 00.001
+ * @see br.com.holistic.bo
+ */
+public class AvaliacaoBO {
+
+	/**
+	 * Metodo que verifica se a avaliação foi feita de acordo com as RNs
+	 * @param New Avaliacao
+	 * @return String
+	 * @throws Exception
+	 * 	 
+	 */
+	public String addAvaliacao(Avaliacao a) throws Exception {
+		
+		AvaliacaoDAO dao = new AvaliacaoDAO();
+		
+		if(dao.addAvaliacao(a)==0) {
+			dao.fechar();
+			return "Nao cadastrou";
+			
+		}else {
+			dao.fechar();
+			return "Cadastrou";
+		}
+		
+				
+	}
+	
+	/**
+	 * Metodo que contém um Array responsavel por armazenar todas as avaliações
+	 * @param
+	 * @return Objeto Avaliacoes
+	 * @throws Exception
+	 * 	 
+	 */
+	public List<Avaliacao> getAvaliacoes() throws Exception {
+		AvaliacaoDAO dao = new AvaliacaoDAO();
+		List<Avaliacao> avaliacoes = dao.getAvaliacao();
+		
+		if(!avaliacoes.isEmpty()) {
+			dao.fechar();
+			return avaliacoes;
+		}else {
+			dao.fechar();
+			return null;
+		}
+	}
+}

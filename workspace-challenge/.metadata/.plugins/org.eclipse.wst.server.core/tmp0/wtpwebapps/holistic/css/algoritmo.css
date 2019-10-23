@@ -1,0 +1,252 @@
+
+body{
+  margin: 0 auto;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-image: url("../img/pink4.jpg");
+  position: relative;
+
+}
+
+.accordion {
+  background-color:#E91C5D;
+  color: #eee;
+  cursor: pointer;
+  padding: 18px;
+  width: 50%;
+  display: block;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 4s;
+  margin-left: 20%;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 5px;
+  border-radius: 2px;
+  position: relative;
+  height: 50px;
+}
+
+
+.opcoes {
+  width: 15%;
+  background-color: #793952;
+  height: 50px;
+  float: right;
+  margin-right: 10%;
+  margin-top: -3.63%;
+}
+.opcoes img {
+  height: 20px;
+  margin-top: 7%;
+  margin-left: 5%;
+}
+.accordion ul{
+  float: right;
+  margin-top: -0.1%;
+
+}
+
+.accordion ul li{
+  list-style: none;
+  display: inline;
+  float: right;
+  z-index: 1;
+
+}
+
+
+button img{
+  height: 20px;
+  float: right;
+  margin-top: -5px;
+  z-index: 99;
+}
+
+
+
+img {
+  height: 50px;
+  text-align: center;
+}
+
+h1{
+  color: #E91C5D;
+}
+.panel img{
+  height: 200px;
+  float: right;
+  width: 290PX;
+  border: 1px solid  #E91C5D;
+}
+
+ p{
+  text-align:inherit;
+  width: 50%;
+  text-align: justify;
+
+
+}
+
+.active, .accordion:hover {
+  background-color: #9f174d;
+}
+
+.panel {
+  padding: 20px 20px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  width: 46.8%;
+  margin-left:  20%;
+  border: 1px solid #E91C5D;
+  position: relative;
+
+}
+
+.content{
+  border: 1px solid #E91C5D;
+  padding: 15px;
+}
+.menu{
+  height: 50px;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+.menu ul{
+  padding: 15px;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 40px;
+}
+.menu ul li {
+  display: block;
+  width: 40px;
+}
+
+.menu ul li:hover{
+  cursor: pointer;
+  color: #E91C5D;
+}
+.menu a{
+  text-decoration: none;
+  color: #000;
+}
+
+
+.chatbot{
+  height: 41%;
+  width: 16%;
+  background-color: rgba(255,255,255, 0.5);
+  float: right;
+  position: fixed;
+  color: white;
+  border-radius: 0px 3px;
+  margin-left: 82%;
+  margin-top: 25%;
+  display: none;
+}
+.topo{
+  height: 40px;
+  width: 100%;
+  background-color: #E91C5D;
+  border-radius: 3px 3px 0;
+  margin-top: -7.2%;
+}
+.topo p{
+  padding: 10px;
+  text-align: right;
+  margin-left: 3%;
+
+}
+.topo:hover{
+  cursor: pointer;
+}
+
+.ativar{
+  height: 30px;
+  width: 16%;
+  background-color:   #fff;
+  margin-left: 82%;
+  margin-top: 44.7%;
+  position: fixed;
+  opacity: 0.7;
+  border-radius: 2px;
+}
+
+.ativar:hover{
+  cursor: pointer;
+}
+
+.ativar p{
+  margin-top: 4px;
+  text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.ativar img{
+  padding: 5px;
+  height: 20px;
+  display: block;
+  width: 9%;
+}
+
+.ativar input{
+  height: 30px;
+  float: right;
+  border: none;
+  width: 86%;
+
+}
+#s1{
+  margin-left: 10%;
+}
+#s2{
+  margin-left: 5px;
+}
+#s3{
+  margin-left: 5px;
+}
+#s4{
+  margin-left: 5px;
+}
+#s5{
+  margin-left: 5px;
+}
+
+.botoes{
+  z-index: 2;
+  margin-right: 12%;
+  float: right;
+
+
+}
+.botoes img{
+  height: 20px;
+
+}
+
+.first{
+  margin-top: -20%;
+
+  height: 1%;
+}
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+	
+  background-image: url('../img/star0.png');
+  background-image: no-repeat;	
+}

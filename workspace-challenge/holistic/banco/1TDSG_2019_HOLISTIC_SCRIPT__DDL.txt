@@ -1,0 +1,154 @@
+DROP TABLE t_scb_administrador CASCADE CONSTRAINTS;
+
+DROP TABLE t_scb_aluno CASCADE CONSTRAINTS;
+
+DROP TABLE t_scb_professor CASCADE CONSTRAINTS;
+
+DROP TABLE t_scb_avaliacao CASCADE CONSTRAINTS;
+
+DROP TABLE t_scb_capitulo CASCADE CONSTRAINTS;
+
+DROP TABLE t_scb_disciplina CASCADE CONSTRAINTS;
+
+DROP TABLE t_scb_adm_avaliacao;
+
+CREATE TABLE t_scb_adm_avaliacao (
+    cd_avaliacao       NUMBER(5) NOT NULL,
+    cd_administrador   VARCHAR2(5) NOT NULL,
+    cd_adm_avaliacao   NUMBER(5) NOT NULL,
+    cd_disciplina      NUMBER(5) NOT NULL,
+    cd_aluno           VARCHAR2(7) NOT NULL,
+    cd_professor       VARCHAR2(7) NOT NULL,
+    cd_capitulo        NUMBER NOT NULL
+);
+
+ALTER TABLE t_scb_adm_avaliacao ADD CONSTRAINT pk_scb_adm_avaliacao PRIMARY KEY ( cd_adm_avaliacao );
+
+CREATE TABLE t_scb_administrador (
+    cd_administrador   VARCHAR2(5) NOT NULL,
+    nr_cpf             VARCHAR2(12) NOT NULL,
+    ds_email           VARCHAR2(30) NOT NULL,
+    dt_nascimento      DATE NOT NULL,
+    nm_administrador   VARCHAR2(50) NOT NULL,
+    ds_genero          CHAR(1) NOT NULL,
+    nr_senha           VARCHAR2(10) NOT NULL,
+    ds_relatorio       VARCHAR2(50) NULL
+);
+
+ALTER TABLE t_scb_administrador
+    ADD CONSTRAINT ck_scb_administrador CHECK ( ( upper(ds_genero) = 'H'
+                                                  OR upper(ds_genero) = 'M'
+                                                  OR upper(ds_genero) = 'N' ) );
+
+ALTER TABLE t_scb_administrador ADD CONSTRAINT pk_scb_administrador PRIMARY KEY ( cd_administrador );
+
+ALTER TABLE t_scb_administrador ADD CONSTRAINT un_scb_administrador_email UNIQUE ( ds_email );
+
+ALTER TABLE t_scb_administrador ADD CONSTRAINT un_scb_administrador_cpf UNIQUE ( nr_cpf );
+
+CREATE TABLE t_scb_aluno (
+    cd_aluno        VARCHAR2(7) NOT NULL,
+    ds_email        VARCHAR2(30) NOT NULL,
+    nr_cpf          VARCHAR2(12) NOT NULL,
+    dt_nascimento   DATE NOT NULL,
+    nm_aluno        VARCHAR2(50) NOT NULL,
+    ds_genero       CHAR(1) NOT NULL,
+    nr_senha        VARCHAR2(10) NOT NULL
+);
+
+ALTER TABLE t_scb_aluno
+    ADD CONSTRAINT ck_scb_aluno CHECK ( ( upper(ds_genero) = 'H'
+                                          OR upper(ds_genero) = 'M'
+                                          OR upper(ds_genero) = 'N' ) );
+
+ALTER TABLE t_scb_aluno ADD CONSTRAINT pk_scb_aluno PRIMARY KEY ( cd_aluno );
+
+ALTER TABLE t_scb_aluno ADD CONSTRAINT un_scb_aluno_email UNIQUE ( ds_email );
+
+ALTER TABLE t_scb_aluno ADD CONSTRAINT un_scb_aluno_cpf UNIQUE ( nr_cpf );
+
+CREATE TABLE t_scb_avaliacao (
+    cd_avaliacao         NUMBER(5) NOT NULL,
+    ds_status            VARCHAR2(100) NOT NULL,
+    nr_nota_disciplina   NUMBER(2, 1) NOT NULL
+);
+
+ALTER TABLE t_scb_avaliacao ADD CONSTRAINT pk_scb_avaliacao PRIMARY KEY ( cd_avaliacao );
+
+CREATE TABLE t_scb_capitulo (
+    cd_capitulo     NUMBER(5) NOT NULL,
+    cd_aluno        VARCHAR2(7) NOT NULL,
+    cd_disciplina   NUMBER(5) NOT NULL,
+    cd_professor    VARCHAR2(7) NOT NULL,
+    ds_titulo       VARCHAR2(100) NOT NULL,
+    ds_video        VARCHAR2(100),
+    ds_documento    VARCHAR2(100) NOT NULL,
+    ds_audio        VARCHAR2(1000)
+);
+
+ALTER TABLE t_scb_capitulo ADD CONSTRAINT pk_scb_capitulo PRIMARY KEY ( cd_capitulo );
+
+CREATE TABLE t_scb_disciplina (
+    cd_disciplina      NUMBER(5) NOT NULL,
+    cd_aluno           VARCHAR2(7) NOT NULL,
+    cd_professor       VARCHAR2(7) NOT NULL,
+    nm_disciplina      VARCHAR2(50) NOT NULL,
+    dt_inicio          DATE NOT NULL,
+    dt_termino         DATE NOT NULL,
+    ds_status_dis      VARCHAR2(100) NOT NULL
+);
+
+ALTER TABLE t_scb_disciplina
+    ADD CONSTRAINT pk_scb_disciplina PRIMARY KEY ( cd_disciplina,
+                                                   cd_aluno,
+                                                   cd_professor );
+
+ALTER TABLE t_scb_disciplina ADD CONSTRAINT un_scb_disciplina UNIQUE ( nm_disciplina );
+
+CREATE TABLE t_scb_professor (
+    cd_professor    VARCHAR2(7) NOT NULL,
+    nr_cpf          VARCHAR2(12) NOT NULL,
+    ds_email        VARCHAR2(30) NOT NULL,
+    nm_professor    VARCHAR2(50) NOT NULL,
+    dt_nascimento   DATE NOT NULL,
+    ds_genero       CHAR(1) NOT NULL,
+    nr_senha        VARCHAR2(10) NOT NULL
+);
+
+ALTER TABLE t_scb_professor
+    ADD CONSTRAINT ck_scb_professor CHECK ( ( upper(ds_genero) = 'H'
+                                              OR upper(ds_genero) = 'M'
+                                              OR upper(ds_genero) = 'N' ) );
+
+ALTER TABLE t_scb_professor ADD CONSTRAINT pk_scb_professor PRIMARY KEY ( cd_professor );
+
+ALTER TABLE t_scb_professor ADD CONSTRAINT un_scb_prof_cpf UNIQUE ( nr_cpf );
+
+ALTER TABLE t_scb_professor ADD CONSTRAINT un_scb_prof_email UNIQUE ( ds_email );
+
+
+ALTER TABLE t_scb_disciplina
+    ADD CONSTRAINT fk_scb_aluno_disciplina FOREIGN KEY ( cd_aluno )
+        REFERENCES t_scb_aluno ( cd_aluno );
+
+
+
+ALTER TABLE t_scb_capitulo
+    ADD CONSTRAINT fk_scb_dis_capitulo FOREIGN KEY ( cd_disciplina,
+                                                     cd_aluno,
+                                                     cd_professor )
+        REFERENCES t_scb_disciplina ( cd_disciplina,
+                                      cd_aluno,
+                                      cd_professor );
+
+ALTER TABLE t_scb_adm_avaliacao
+    ADD CONSTRAINT fk_scb_disciplina FOREIGN KEY ( cd_disciplina,
+                                                   cd_aluno,
+                                                   cd_professor )
+        REFERENCES t_scb_disciplina ( cd_disciplina,
+                                      cd_aluno,
+                                      cd_professor );
+
+ALTER TABLE t_scb_disciplina
+    ADD CONSTRAINT fk_scb_prof_disciplina FOREIGN KEY ( cd_professor )
+        REFERENCES t_scb_professor ( cd_professor );

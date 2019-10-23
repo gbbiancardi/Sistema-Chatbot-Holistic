@@ -1,0 +1,20 @@
+INDEX VERSION 1.4+C:\Users\gabrielbertocco\Desktop\ChallengeIBM_Holistic\workspace-challenge\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1913319922.index
+2910704673.index
+1006185573.index
+3371536117.index
+1103778974.index
+1399130023.index
+568087204.index
+4205219849.index
+3005123854.index
+2502363154.index
+2502857084.index
+3125992354.index
+177022069.index
+1960470321.index
+638316916.index
+948593110.index
+1991726434.index
+761014243.index
+2036844073.index

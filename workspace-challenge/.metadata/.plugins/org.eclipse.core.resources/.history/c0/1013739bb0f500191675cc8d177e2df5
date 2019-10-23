@@ -1,0 +1,38 @@
+package br.com.holistic.bo;
+
+import java.util.List;
+
+import br.com.holistic.beans.Avaliacao;
+import br.com.holistic.dao.AvaliacaoDAO;
+
+public class AvaliacaoBO {
+
+	public String addAvaliacao(Avaliacao a) throws Exception {
+		
+		AvaliacaoDAO dao = new AvaliacaoDAO();
+		
+		if(dao.addAvaliacao(a)==0) {
+			dao.fechar();
+			return "Nao cadastrou";
+			
+		}else {
+			dao.fechar();
+			return "Cadastrou";
+		}
+		
+				
+	}
+	
+	public List<Avaliacao> getAvaliacoes() throws Exception {
+		AvaliacaoDAO dao = new AvaliacaoDAO();
+		List<Avaliacao> avaliacoes = dao.getAvaliacao();
+		
+		if(!avaliacoes.isEmpty()) {
+			dao.fechar();
+			return avaliacoes;
+		}else {
+			dao.fechar();
+			return null;
+		}
+	}
+}

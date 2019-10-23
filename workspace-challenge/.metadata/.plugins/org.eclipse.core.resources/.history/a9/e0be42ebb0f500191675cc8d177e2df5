@@ -1,0 +1,22 @@
+package br.com.holistic.bo;
+
+import br.com.holistic.beans.Matricula;
+import br.com.holistic.dao.MatriculaDAO;
+
+public class MatriculaBO {
+	
+	public String novaMatricula(Matricula m) throws Exception{
+		
+		if(m.getDataInicio()==null) {
+			return "Data invalida";
+		}
+		MatriculaDAO dao = new MatriculaDAO();
+		if(dao.addMatricula(m)==-1) {
+			dao.fechar();
+			return "Nao cadastrou";
+		}else {
+			dao.fechar();
+			return "Cadastrou";
+		}
+	}
+}

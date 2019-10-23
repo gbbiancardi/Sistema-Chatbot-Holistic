@@ -1,0 +1,1119 @@
+------------------- --------------COMANDOS DELETE A PARTIR DA CHAVE PRIMÁRIA T_SCB_ALUNO ---------------------------------------------------
+
+-- DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM83085';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM83088';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM83087';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM83085';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM83077';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM84085';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM84578';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM84097';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM85095';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM85089';
+--DELETE FROM T_SCB_ALUNO WHERE CD_ALUNO='RM83085';
+
+---------------------------------COMANDOS DELETE A PARTIR DA CHAVE PRIMÁRIA T_SCB_PROFESSOR ---------------------------------------------------
+--
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P67890';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P11123';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P07644';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P06909';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P06713';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P06607';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P06906';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P67890';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P07463';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P61532';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P08035';
+-- DELETE FROM T_SCB_PROFESSOR WHERE CD_PROFESSOR='P12345';
+
+---------------------------------COMANDOS DELETE A PARTIR DA CHAVE PRIMÁRIA T_SCB_ADMINISTRADOR ---------------------------------------------------
+--
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A0399';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A0633';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A0694';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A0977';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A6658';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A8183';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A0835';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A6515';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A0545';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A7261';
+-- DELETE FROM T_SCB_ADMINISTRADOR WHERE CD_ADMINISTRADOR='A0788';
+
+---------------------------------COMANDOS DELETE A PARTIR DA CHAVE PRIMÁRIA T_SCB_DISCIPLINA ---------------------------------------------------
+
+-- DELETE FROM T_SCB_DISCIPLINA WHERE CD_DISCIPLINA ='12345';
+-- DELETE FROM T_SCB_DISCIPLINA WHERE CD_DISCIPLINA ='54321';
+-- DELETE FROM T_SCB_DISCIPLINA WHERE CD_DISCIPLINA ='00000';
+
+------------------------------------------ COMANDO INSERT NA TABELA T_SCB_ALUNO ----------------------------------------------------------------------
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM83085',
+    'MARIAJOSE@MARIAJOSE.COM',
+    '36284883897',
+    TO_DATE('21/04/1987', 'DD/MM/YYYY'),
+    'MARIA DAS DORES',
+    'M',
+    '12345'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM83088',
+    'MAIS_1_CINTIA@HOTMAILC.OM',
+    '36284885898',
+    TO_DATE('28/09/1988', 'DD/MM/YYYY'),
+    'CINTIA DOS SANTOS DA CRUZ',
+    'M',
+    '12346'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM83087',
+    'LUCAS@GMAIL.COM',
+    '36284897854',
+    TO_DATE('10/10/1989', 'DD/MM/YYYY'),
+    'LUCAS CANDIDO FERREIRA',
+    'H',
+    '11111'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM83009',
+    'MICHAEL@GMAIL.COM',
+    '36284883857',
+    TO_DATE('04/04/1988', 'DD/MM/YYYY'),
+    'MICHAEL FERREIRA',
+    'H',
+    '12346'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM83077',
+    'RITACASSIA@GMAIL.COM',
+    '36384883899',
+    TO_DATE('30/05/1995', 'DD/MM/YYYY'),
+    'RITA DE CAASSIA ASSISS',
+    'M',
+    '12345'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM84085',
+    'ANA@GMAIL.COM',
+    '36284888957',
+    TO_DATE('04/06/1990', 'DD/MM/YYYY'),
+    'ANA PAULA RAMOS',
+    'M',
+    '12345'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM84578',
+    'ISABEL@GMAIL.COM',
+    '35284893899',
+    TO_DATE('24/04/1995', 'DD/MM/YYYY'),
+    'ISABEL FERREIRA',
+    'M',
+    '12345'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM84097',
+    'BRUNO@GMAIL.COM',
+    '36384883898',
+    TO_DATE('15/10/1985', 'DD/MM/YYYY'),
+    'BRUNO DE FARIA',
+    'H',
+    '12345'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM83097',
+    'JOSEHENRIQUE@GMAIL.COM',
+    '36384883477',
+    TO_DATE('01/01/1987', 'DD/MM/YYYY'),
+    'JOSE HENRIQUE',
+    'H',
+    '12345'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM85095',
+    'MATHEUSCRUZ@GMAIL.COM',
+    '36283897685',
+    TO_DATE('08/07/1997', 'DD/MM/YYYY'),
+    'MATHEUS DA CRUZ',
+    'H',
+    '12345'
+);
+
+INSERT INTO t_scb_aluno (
+    cd_aluno,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_aluno,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'RM85089',
+    'MARIAJ@HOTMAIL.COM',
+    '36287596877',
+    TO_DATE('22/09/1987', 'DD/MM/YYYY'),
+    'MARIA FERNANDA FERRAZ',
+    'M',
+    '12345'
+);
+
+COMMIT;
+ ------------------------------------------------------------------------------------------------------------------------------
+ -------------------------------------COMANDO INSERT NA TABELA T_SCB_PROFESSOR--------------------------------------------------------------------------
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P12345',
+    'JOSEPAULO@GMAIL.COM',
+    '07186951350',
+    TO_DATE('20/04/1989', 'DD/MM/YYYY'),
+    'JOSE PAULO DINIZ',
+    'H',
+    '00001'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P67890',
+    'VITORIA@GMAIL.COM',
+    '07151104383',
+    TO_DATE('21/10/1987', 'DD/MM/YYYY'),
+    'VITORIA MARIA DE OLIVEIRA',
+    'M',
+    '00002'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P11123',
+    'THIAGO@GMAIL.COM',
+    '06476134337',
+    TO_DATE('5/04/1980', 'DD/MM/YYYY'),
+    'THIAGO PAZ SILVA',
+    'H',
+    '00003'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P07644',
+    'PAULO@GMAIL.COM',
+    '07644413375',
+    TO_DATE('21/05/1990', 'DD/MM/YYYY'),
+    'PAULO HUDSON MARTINS DA MATA E SILVA',
+    'H',
+    '00004'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P06909',
+    'JOAO@GMAILCOM',
+    '06909550307',
+    TO_DATE('21/10/1988', 'DD/MM/YYYY'),
+    'JOAO HERICLYS VERAS PINHEIRO ',
+    'H',
+    '00005'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P06713',
+    'VANESSA@HOTMAIL.COM',
+    '06713853307',
+    TO_DATE('1/04/1987', 'DD/MM/YYYY'),
+    'VANESSA RAYANE NASCIMENTO VERAS',
+    'M',
+    '00006'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P06607',
+    'MATHEUS@HOTMAIL.COM.',
+    '06607371329',
+    TO_DATE('12/06/1987', 'DD/MM/YYYY'),
+    'MATHEUS ALCANTARA LOPES',
+    'H',
+    '00007'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P06906',
+    'TAYNA@GMAIL.COM.COM',
+    '06903623310',
+    TO_DATE('13/04/1980', 'DD/MM/YYYY'),
+    'TAYNA ALVES DOS SANTOS',
+    'M',
+    '00008'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P07463',
+    'GERMANO@HOTMAIL.COM',
+    '07463069389',
+    TO_DATE('21/07/1981', 'DD/MM/YYYY'),
+    'GERMANO ALVES DA SILVA',
+    'H',
+    '00009'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P61532',
+    'EDVANIA@GMAIL.COM',
+    '61532198370',
+    TO_DATE('28/08/1988', 'DD/MM/YYYY'),
+    'EDVANIA SILVA DA SILVA',
+    'M',
+    '00010'
+);
+
+INSERT INTO t_scb_professor (
+    cd_professor,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_professor,
+    ds_genero,
+    nr_senha
+) VALUES (
+    'P08035',
+    'MARIACELIA@GMAIL.COM',
+    '08035949330',
+    TO_DATE('20/04/1977', 'DD/MM/YYYY'),
+    'MARIA CECILIA DA CUNHA COSTA',
+    'M',
+    '00012'
+);
+
+COMMIT;
+ 
+ ------------------------------------------------------------------------------------------------------------------------------
+ -------------------------------------COMANDO INSERT NA TABELA T_SCB_ADMINISTRADOR--------------------------------------------------------------------------
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A0399',
+    'JUCIARA@HOTMAIL.COM',
+    '03990619322',
+    TO_DATE('30/10/1989', 'DD/MM/YYYY'),
+    'JUCIARA DIAS DA SILVA',
+    'N',
+    '11111',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A0633',
+    'LUCAS@HOTMAIL.COM',
+    '06333703397',
+    TO_DATE('30/11/1980', 'DD/MM/YYYY'),
+    'LUCAS CARVALHO LAGES',
+    'H',
+    '22222',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A0694',
+    'DAIANA@GMAIL.COM',
+    '06994897338',
+    TO_DATE('10/10/1978', 'DD/MM/YYYY'),
+    'DAIANA DA SILVA OLIVEIRA',
+    'M',
+    '22222',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A0788',
+    'JOAOPAULO@HOTMAIL.COM',
+    '07888954359',
+    TO_DATE('30/01/1991', 'DD/MM/YYYY'),
+    'JOAO PAULO ARAUJO DE OLIVEIRA',
+    'H',
+    '33333',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A0977',
+    'ANDRESSA@HOTMAIL.COM',
+    '05977400381',
+    TO_DATE('30/10/1989', 'DD/MM/YYYY'),
+    'ANDRESSA MARIA DE SOUSA SILVA ',
+    'M',
+    '44444',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A7261',
+    'TARCIO@HOTMAIL.COM',
+    '07261879339',
+    TO_DATE('20/10/1988', 'DD/MM/YYYY'),
+    'TARCIO FEITOSA DE CARVALHO',
+    'H',
+    '55555',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A6658',
+    'ANACAROL@GMAIL.COM',
+    '06658958360',
+    TO_DATE('30/10/1989', 'DD/MM/YYYY'),
+    'ANA CAROLINE PEREIRA LEMOS',
+    'M',
+    '66666',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A8183',
+    'JOAO@HOTMAIL.COM',
+    '08183084354',
+    TO_DATE('25/05/1992', 'DD/MM/YYYY'),
+    'JOAO MARCOS OLIVEIRA SILVA',
+    'H',
+    '77777',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A0835',
+    'FELIPE@HOTMAIL.COM',
+    '06835647302',
+    TO_DATE('03/10/1978', 'DD/MM/YYYY'),
+    'FELIPE WANDERSON ALVES DE SOUSA',
+    'H',
+    '88888',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A6515',
+    'RAYLIA@HOTMAIL.COM',
+    '61515323331',
+    TO_DATE('06/06/1990', 'DD/MM/YYYY'),
+    'RAYLLA FONTINELE BARROSO',
+    'M',
+    '99999',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+INSERT INTO t_scb_administrador (
+    cd_administrador,
+    ds_email,
+    nr_cpf,
+    dt_nascimento,
+    nm_administrador,
+    ds_genero,
+    nr_senha,
+    ds_relatorio
+) VALUES (
+    'A0545',
+    'CELIANE@HOTMAIL.COM',
+    '05545620303',
+    TO_DATE('1/01/1991', 'DD/MM/YYYY'),
+    'CELIANE GOMES DE MOURA',
+    'M',
+    '00000',
+    'NÃO HÁ RELATÓRIO DISPONIVEL'
+);
+
+COMMIT;
+ 
+ ------------------------------------------------------------------------------------------------------------------------------
+ -------------------------------------COMANDO INSERT NA TABELA T_SCB_DISCIPLINA----------------------------------------------
+
+INSERT INTO t_scb_disciplina (
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    nm_disciplina,
+    dt_inicio,
+    ds_status_dis,
+    dt_termino
+) VALUES (
+    12345,
+    'RM83085',
+    'P12345',
+    'ALGORITMO',
+    TO_DATE('10/02/2019', 'DD/MM/YYYY'),
+    'ATIVO',
+    TO_DATE('10/12/2020', 'DD/MM/YYYY')
+);
+
+INSERT INTO t_scb_disciplina (
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    nm_disciplina,
+    dt_inicio,
+    ds_status_dis,
+    dt_termino
+) VALUES (
+    54321,
+    'RM83088',
+    'P11123',
+    'PORTUGUÊS',
+    TO_DATE('08/05/2019', 'DD/MM/YYYY'),
+    'ATIVO',
+    TO_DATE('05/12/2025', 'DD/MM/YYYY')
+);
+
+INSERT INTO t_scb_disciplina (
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    nm_disciplina,
+    dt_inicio,
+    ds_status_dis,
+    dt_termino
+) VALUES (
+    12346,
+    'RM83009',
+    'P08035',
+    'MATEMÁTICA',
+    TO_DATE('15/05/2019', 'DD/MM/YYYY'),
+    'ATIVO',
+    TO_DATE('15/07/2021', 'DD/MM/YYYY')
+);
+
+COMMIT;
+ 
+------------------------------------------------------------------------------------------------------------------------------------
+ -------------------------------------COMANDO INSERT NA TABELA T_SCB_CAPITULO----------------------------------------------
+
+INSERT INTO t_scb_capitulo (
+    cd_capitulo,
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    ds_titulo,
+    ds_video,
+    ds_documento,
+    ds_audio
+) VALUES (
+    22222,
+    12345,
+    'RM83085',
+    'P12345',
+    'Cap 1 - Princípios da programação',
+    NULL,
+    'Nesse  capítulo  teremos  inicialmente 
+ uma breve  história  da  Tecnologia  da Informação',
+    NULL
+);
+
+INSERT INTO t_scb_capitulo (
+    cd_capitulo,
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    ds_titulo,
+    ds_video,
+    ds_documento,
+    ds_audio
+) VALUES (
+    33333,
+    54321,
+    'RM83088',
+    'P11123',
+    'Cap 2 - Tomada de Decisão',
+    NULL,
+    'Nesse  capítulo  Como tomar decisões?',
+    NULL
+);
+
+INSERT INTO t_scb_capitulo (
+    cd_capitulo,
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    ds_titulo,
+    ds_video,
+    ds_documento,
+    ds_audio
+) VALUES (
+    01234,
+    54321,
+    'RM83088',
+    'P11123',
+    'Cap 3 - MATRIZES',
+    NULL,
+    'O QUE SÃO MATRIZES...?',
+    NULL
+);
+
+INSERT INTO t_scb_capitulo (
+    cd_capitulo,
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    ds_titulo,
+    ds_video,
+    ds_documento,
+    ds_audio
+) VALUES (
+    89754,
+    54321,
+    'RM83088',
+    'P11123',
+    'Cap 4 - VARIAEIS',
+    NULL,
+    'ENTENDA VARIAVEIS',
+    NULL
+);
+
+COMMIT;
+ 
+ 
+ ------------------------------------------------------------------------------------------------------------------------------------
+ -------------------------------------COMANDO INSERT NA TABELA T_SCB_AVALIACAO------------------------------------------------
+
+INSERT INTO t_scb_avaliacao (
+    cd_avaliacao,
+    ds_status,
+    nr_nota_disciplina
+) VALUES (
+    4444,
+    'VIGENTE',
+    '8'
+);
+
+INSERT INTO t_scb_avaliacao (
+    cd_avaliacao,
+    ds_status,
+    nr_nota_disciplina
+) VALUES (
+    3333,
+    'VIGENTE',
+    '2'
+);
+
+COMMIT;
+
+ ------------------------------------------------------------------------------------------------------------------------------------
+ -------------------------------------COMANDO INSERT NA TABELA T_SCB_ADM_ AVALIACAO------------------------------------------------
+
+INSERT INTO t_scb_adm_avaliacao (
+    cd_avaliacao,
+    cd_administrador,
+    cd_adm_avaliacao,
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    cd_capitulo
+) VALUES (
+    4444,
+    'A0399',
+    12345,
+    54321,
+    'RM83088',
+    'P11123',
+    33333
+);
+
+INSERT INTO t_scb_adm_avaliacao (
+    cd_avaliacao,
+    cd_administrador,
+    cd_adm_avaliacao,
+    cd_disciplina,
+    cd_aluno,
+    cd_professor,
+    cd_capitulo
+) VALUES (
+    3333,
+    'A0399',
+    12344,
+    12345,
+    'RM83085',
+    'P12345',
+    22222
+);
+
+COMMIT;
+
+-- ----------------------------------------COMANDO UPDATE NA TABELA T_SCB_ADM_AVALIACAO---------------------------------------------------------------------
+
+-- ESSA TABELA NÃO TEM UPDATE POIS É ASSOCIATIVA E OS ATRIBUTOS SÃO CHAVE PRIMÁRIA/CHAVE ESTRANGEIRA
+
+COMMIT;
+-- ----------------------------------------COMANDO UPDATE NA TABELA T_SCB_AVALIACAO---------------------------------------------------------------------
+
+UPDATE t_scb_avaliacao
+SET
+    ds_status = 'NÃO ESTÁ VIGENTE'
+WHERE
+    cd_avaliacao = 4444;
+
+UPDATE t_scb_avaliacao
+SET
+    nr_nota_disciplina = 9
+WHERE
+    cd_avaliacao = 3333;
+
+COMMIT;
+
+
+
+-- ----------------------------------------COMANDO UPDATE NA TABELA T_SCB_CAPITULO----------------------------------------------------------------------
+
+UPDATE t_scb_capitulo
+SET
+    ds_titulo = 'VETORES'
+WHERE
+    cd_capitulo = 89754;
+
+UPDATE t_scb_capitulo
+SET
+    ds_documento = 'Matrizes são tabelas de números.'
+WHERE
+    cd_capitulo = 1234;
+
+COMMIT;
+-- ----------------------------------------COMANDO UPDATE NA TABELA T_SCB_DISCIPLINA----------------------------------------------------------------------
+
+UPDATE t_scb_disciplina
+SET
+    ds_status_dis = 'INATIVO'
+WHERE
+    cd_disciplina = 12345;
+
+UPDATE t_scb_disciplina
+SET
+    dt_termino = TO_DATE('11/10/2020', 'DD/MM/YYYY')
+WHERE
+    cd_disciplina = 54321;
+
+UPDATE t_scb_disciplina
+SET
+    nm_disciplina = 'NANO CURSO'
+WHERE
+    cd_disciplina = 54321;
+
+COMMIT;
+-- ----------------------------------------COMANDO UPDATE NA TABELA T_SCB_ALUNO ----------------------------------------------------------------------
+
+UPDATE t_scb_aluno
+SET
+    nm_aluno = 'CINTIA FERRAZ'
+WHERE
+    cd_aluno = 'RM83085';
+
+UPDATE t_scb_aluno
+SET
+    nm_aluno = 'HUMBERTO CARLOS'
+WHERE
+    cd_aluno = 'RM83088';
+
+UPDATE t_scb_aluno
+SET
+    nr_cpf = 36288744985
+WHERE
+    cd_aluno = 'RM83009';
+
+UPDATE t_scb_aluno
+SET
+    ds_email = 'CASSIARITA@GMAIL.COM'
+WHERE
+    cd_aluno = 'RM83077';
+
+UPDATE t_scb_aluno
+SET
+    ds_genero = 'N'
+WHERE
+    cd_aluno = 'RM84085';
+
+UPDATE t_scb_aluno
+SET
+    nr_senha = '11111'
+WHERE
+    cd_aluno = 'RM84578';
+
+UPDATE t_scb_aluno
+SET
+    dt_nascimento = TO_DATE('28/09/1988', 'DD/MM/YYYY')
+WHERE
+    cd_aluno = 'RM84097';
+
+UPDATE t_scb_aluno
+SET
+    nm_aluno = 'JOSE HENRIQUE DA SILVA'
+WHERE
+    cd_aluno = 'RM83097';
+
+UPDATE t_scb_aluno
+SET
+    dt_nascimento = TO_DATE('20/10/2000', 'DD/MM/YYYY')
+WHERE
+    cd_aluno = 'RM85095';
+
+UPDATE t_scb_aluno
+SET
+    ds_email = 'FERNANDA@GMAIL.COM'
+WHERE
+    cd_aluno = 'RM85089';
+
+COMMIT;
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+-- ----------------------------------------COMANDO UPDATE NA TABELA T_SCB_PROFESSOR --------------------------------------------
+
+UPDATE t_scb_professor
+SET
+    nm_professor = 'ANA GLAUCIA'
+WHERE
+    cd_professor = 'P67890';
+
+UPDATE t_scb_professor
+SET
+    ds_email = 'PAZ@GMAIL.COM'
+WHERE
+    cd_professor = 'P11123';
+
+UPDATE t_scb_professor
+SET
+    ds_genero = 'N'
+WHERE
+    cd_professor = 'P07644';
+
+UPDATE t_scb_professor
+SET
+    dt_nascimento = TO_DATE('01/08/1989', 'DD/MM/YYYY')
+WHERE
+    cd_professor = 'P06909';
+
+UPDATE t_scb_professor
+SET
+    dt_nascimento = TO_DATE('10/11/1990', 'DD/MM/YYYY')
+WHERE
+    cd_professor = 'P06713';
+
+UPDATE t_scb_professor
+SET
+    nr_cpf = '71171975368'
+WHERE
+    cd_professor = 'P06607';
+
+UPDATE t_scb_professor
+SET
+    nr_cpf = '06733682389'
+WHERE
+    cd_professor = 'P06906';
+
+UPDATE t_scb_professor
+SET
+    nr_senha = '00100'
+WHERE
+    cd_professor = 'P07463';
+
+UPDATE t_scb_professor
+SET
+    ds_email = 'CELINHA@GMAIL.COM'
+WHERE
+    cd_professor = 'P08035';
+
+COMMIT;
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+-- ----------------------------------------COMANDO UPDATE NA TABELA T_SCB_ADMINISTRADOR --------------------------------------------
+
+UPDATE t_scb_administrador
+SET
+    nm_administrador = 'PAULO HENRIQUE AMORIN'
+WHERE
+    cd_administrador = 'A0399';
+
+UPDATE t_scb_administrador
+SET
+    ds_genero = 'H'
+WHERE
+    cd_administrador = 'A0399';
+
+UPDATE t_scb_administrador
+SET
+    nr_cpf = '60193585340'
+WHERE
+    cd_administrador = 'A0633';
+
+UPDATE t_scb_administrador
+SET
+    ds_email = 'DAY@GMAIL.COM'
+WHERE
+    cd_administrador = 'A0694';
+
+UPDATE t_scb_administrador
+SET
+    nr_senha = '88888'
+WHERE
+    cd_administrador = 'A0977';
+
+UPDATE t_scb_administrador
+SET
+    dt_nascimento = TO_DATE('20/11/1999', 'DD/MM/YYYY')
+WHERE
+    cd_administrador = 'A6658';
+
+UPDATE t_scb_administrador
+SET
+    ds_relatorio = NULL
+WHERE
+    cd_administrador = 'A6658';
+
+COMMIT;

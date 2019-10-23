@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\gabrielbertocco\Downloads\ChallengeIBM_Holistic\ChallengeIBM_Holistic\finalmente\watson-api"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\gabrielbertocco\Desktop\ChallengeIBM_Holistic\workspace-challenge\holistic"/>
+			<item value=""/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\gabrielbertocco\Downloads\ChatBot.zip"/>
+			<item value="C:\Users\gabrielbertocco\Desktop\chatbot.zip"/>
+		</list>
+	</section>
+</section>

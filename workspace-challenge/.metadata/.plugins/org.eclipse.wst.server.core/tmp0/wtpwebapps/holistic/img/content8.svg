@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="800px" height="394px" viewBox="0 0 800 394" style="enable-background:new 0 0 800 394;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ededed;}
+	.st1{fill:none;stroke:#ACACAC;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:#ACACAC;}
+	.st3{fill:none;stroke:#355C81;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:#303030;}
+	.st5{font-family:'Arial';}
+	.st6{font-size:24.7234px;}
+	.st7{font-size:17.8104px;}
+	.st8{font-family:'Arial';font-weight: bold}
+	.st9{font-size:23.0524px;}
+</style>
+<rect class="st0" width="800" height="394"/>
+<g>
+	<g>
+		<g>
+			<polyline class="st1" points="232.4,85.2 232.4,317.4 588.6,317.4 			"/>
+			<g>
+				<polygon class="st2" points="226.5,87 232.4,76.6 238.4,87 				"/>
+			</g>
+			<g>
+				<polygon class="st2" points="586.8,323.4 597.2,317.4 586.8,311.4 				"/>
+			</g>
+		</g>
+	</g>
+	<line class="st3" x1="241.7" y1="309.2" x2="554.1" y2="116.3"/>
+	<path class="st3" d="M256.5,312.8c0,0,35.3,5.6,54.3-52.8s13.8-177.2,13.8-177.2"/>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 523.9197 171.5344)" class="st4 st5 st6">f  (n)</text>
+		</g>
+		<text transform="matrix(1 0 0 1 532.6287 176.2829)" class="st4 st5 st7">b</text>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 343.7834 113.9469)" class="st4 st5 st6">f  (n)</text>
+		</g>
+		<text transform="matrix(1 0 0 1 352.4924 118.6955)" class="st4 st5 st7">a</text>
+	</g>
+	<text transform="matrix(1 0 0 1 202.8225 99.1749)" class="st4 st8 st9">T</text>
+	<text transform="matrix(1 0 0 1 563.3655 303.5719)" class="st4 st8 st9">n</text>
+</g>
+</svg>

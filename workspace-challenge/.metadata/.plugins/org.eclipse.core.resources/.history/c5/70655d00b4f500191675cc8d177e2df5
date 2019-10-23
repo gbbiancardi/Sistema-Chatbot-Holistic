@@ -1,0 +1,91 @@
+package br.com.holistic.service;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
+import com.ibm.watson.assistant.v1.model.Context;
+import com.ibm.watson.assistant.v1.model.MessageInput;
+import com.ibm.watson.assistant.v1.model.MessageOptions;
+import com.ibm.watson.assistant.v1.model.MessageResponse;
+import com.ibm.watson.assistant.v1.Assistant;
+
+/**
+ * Classe Responsavel por fazer a comunicacao com o IBM Watson Assistant
+ * @author Equipe Holistic
+ * @version 00.001
+ * @see br.com.holistic.service
+ */
+@WebServlet(urlPatterns = "/v1")
+public class AssistantV1Servlet extends HttpServlet {
+	
+	private Context context = null;
+	private static final long serialVersionUID = -8716683257301345455L;
+
+	/**
+	 * Este metodo envia uma requisicao POST para a API do IBM Watson Assistant
+	 * @param objeto HttpServletRequest req, HttpServletResponse resp
+	 * @return void
+	 * @throws ServletException, IOException
+	 */
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+		
+		String msg = req.getParameter("question");
+		System.out.println(msg);
+
+		MessageResponse response = this.assistantAPICall(msg);
+		
+		resp.setContentType("application/json");
+		resp.getWriter().write(new Gson().toJson(response.getOutput().getText()));
+	}
+
+	/**
+	 * Este metodo credencia a conexao com o IBM Watson Assistant
+	 * @param String msg
+	 * @return response
+	 * @throws ServletException, IOException
+	 */
+	private MessageResponse assistantAPICall(String msg) {
+
+		// Configuração de autenticação do serviço *********************************************
+		IamOptions options = new IamOptions.Builder()
+				//Colocar a sua APIKEY
+				.apiKey("BJYJDsnxKEYY3C3Vj02PVM_SMw_viw0Bse5jej_1Ynu_")
+				.build();
+		
+		// Criando o objeto do serviço desejado ************************************************
+		
+		Assistant service = new Assistant("2018-02-16", options);
+		      //Colocar a sua WORKSPACEID
+		String workspaceId = "95cd6319-eb73-41c5-b543-a46a499003ec";
+		
+		// Preparando a mensagem de envio *****************************************************
+		MessageInput input = new MessageInput();
+		input.setText(msg);
+		
+		// Configurando os parametros para o Watson *******************************************
+		MessageOptions messageOptions = new MessageOptions.Builder()
+				.workspaceId(workspaceId)
+				.input(input)
+				.context(this.context)
+				.build();
+		
+		// Conectando com o Assistant e recebendo a resposta dele ******************************
+		MessageResponse response  = service.message(messageOptions)
+				.execute()
+				.getResult();
+		
+		this.context = response.getContext();
+
+		return response;
+	}
+
+}

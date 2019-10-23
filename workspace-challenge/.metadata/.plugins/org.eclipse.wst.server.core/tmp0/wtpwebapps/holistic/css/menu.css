@@ -1,0 +1,40 @@
+body{
+  margin: 0 auto;
+  background-image: url("../img/pink2.png");
+  position: relative;
+}
+
+header{
+  width: auto;
+  padding: 10px 10px;
+}
+header>a{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 10px;
+  color: black;
+}
+.options{
+  margin-left: 28%;
+  margin-top: 10%;
+  background-color: rgba(255,255,255,0.5);
+}
+button{
+  padding: 25px;
+  float: left;
+  margin: 10px;
+  align-items: center;
+  color: #E91C5D;
+  background-color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 26px;
+}
+button>a{
+  color: #E91C5D;
+  background-color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 26px;
+  text-decoration: none;
+}

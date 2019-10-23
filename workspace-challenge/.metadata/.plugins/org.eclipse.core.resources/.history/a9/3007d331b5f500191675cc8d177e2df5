@@ -1,0 +1,62 @@
+package br.com.holistic.beans;
+
+/**
+ * Classe responsavel pela avaliação da disciplina.
+ * 
+ * 
+ * @author Holistic
+ * @version 00.001
+ * @see br.com.holistic.beans
+ *
+ */
+public class Avaliacao {
+	private int codigo;
+	private int nota;
+	private Disciplina disciplina;
+	private Capitulo capitulo;
+	private Usuario usuario;
+	
+	
+	public Avaliacao() {
+		super();
+	}
+	public Avaliacao(int codigo, int nota, Disciplina disciplina, Capitulo capitulo, Usuario usuario) {
+		super();
+		this.codigo = codigo;
+		this.nota = nota;
+		this.disciplina = disciplina;
+		this.capitulo = capitulo;
+		this.usuario = usuario;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public int getNota() {
+		return nota;
+	}
+	public void setNota(int nota) {
+		this.nota = nota;
+	}
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+	public Capitulo getCapitulo() {
+		return capitulo;
+	}
+	public void setCapitulo(Capitulo capitulo) {
+		this.capitulo = capitulo;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+}

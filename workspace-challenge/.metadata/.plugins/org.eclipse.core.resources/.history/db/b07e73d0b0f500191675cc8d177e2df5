@@ -1,0 +1,41 @@
+package br.com.holistic.bo;
+
+import br.com.holistic.beans.Disciplina;
+import br.com.holistic.dao.DisciplinaDAO;
+
+public class DisciplinaBO {
+	
+	public String novaDisciplina(Disciplina d) throws Exception{
+		
+		if(d.getUsuario().getCodigo().indexOf("P")==-1) {
+			return "Usuario nao permitido";
+		}
+	
+		
+		DisciplinaDAO dao = new DisciplinaDAO();
+		
+		if(dao.cadastrarDisciplina(d)==1) {
+			dao.fechar();
+			return "Cadastrou";
+		}else {
+			dao.fechar();
+			return "Nao cadastrou";
+		}
+		
+		
+	}
+	
+	public Disciplina getDisciplina(int codigo) throws Exception{
+		DisciplinaDAO dao = new DisciplinaDAO();
+		Disciplina disciplina = dao.consultarDisciplina(codigo);
+		if(disciplina!=null) {
+			
+			dao.fechar();
+			return disciplina;
+		}else {
+			dao.fechar();
+			return null;
+		}
+	}
+
+}

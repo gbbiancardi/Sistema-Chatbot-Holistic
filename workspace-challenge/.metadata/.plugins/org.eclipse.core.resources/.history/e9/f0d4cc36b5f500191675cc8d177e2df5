@@ -1,0 +1,75 @@
+package br.com.holistic.beans;
+
+/**
+ * Classe responsavel por armazenar a Disciplina
+ * @author Holistic
+ * @version 00.001
+ * @see br.com.holistic.beans
+ *
+ */
+public class Disciplina {
+	private int codigo;
+	private String nome;
+	private String dataInicio;
+	private String dataTermino;
+	private String statusDisciplina;
+	private Usuario usuario;
+	
+	
+	public Disciplina() {
+		super();
+	}
+	public Disciplina(int codigo) {
+		
+		this.codigo = codigo;
+	
+	}
+	public Disciplina(int codigo, String nome, String dataInicio, String dataTermino, String statusDisciplina,
+			Usuario usuario) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.dataInicio = dataInicio;
+		this.dataTermino = dataTermino;
+		this.statusDisciplina = statusDisciplina;
+		this.usuario = usuario;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(String dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+	public String getDataTermino() {
+		return dataTermino;
+	}
+	public void setDataTermino(String dataTermino) {
+		this.dataTermino = dataTermino;
+	}
+	public String getStatusDisciplina() {
+		return statusDisciplina;
+	}
+	public void setStatusDisciplina(String statusDisciplina) {
+		this.statusDisciplina = statusDisciplina;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
+}

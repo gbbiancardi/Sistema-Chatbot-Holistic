@@ -1,0 +1,101 @@
+package br.com.holistic.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import br.com.holistic.beans.Disciplina;
+import br.com.holistic.conexao.Conexao;
+
+/**
+ * Classe responsavel por Estabeler a Conexao com o Banco de Dados entre DisciplinaDAO e Conexao
+ * CD_DISCIPLINA, NM_DISCIPLINA, DT_INICIO, DT_TERMINO,DS_STATUS_DIS, CD_PROFESSOR
+ * CD_DISCIPLINA = PK
+ * @author Holistic
+ * @version 00.001
+ * @see br.com.holistic.dao
+ */
+public class DisciplinaDAO {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	/**
+	 * Metodo que estabelece conexao entre o CapituloDAO e Conexao.
+	 * @author Holistic
+	 * @param 
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public DisciplinaDAO() throws Exception{
+		con = Conexao.getConnectar();
+		
+	}
+	
+	/**
+	 * Metodo que Cadastra uma nova Disciplina no Banco de Dados
+	 * @author Holistic
+	 * @param new Disciplina
+	 * @return executeUpdate
+	 * @throws Exception
+	 * 	 
+	 */
+	public int cadastrarDisciplina(Disciplina d) throws Exception{
+		
+		
+		stmt= con.prepareStatement("INSERT INTO T_SCB_DISCIPLINA(CD_DISCIPLINA, NM_DISCIPLINA, DT_INICIO, DT_TERMINO,DS_STATUS_DIS, CD_PROFESSOR) VALUES(?,?,?,?,?,?)");
+		stmt.setInt(1, d.getCodigo());
+		stmt.setString(2, d.getNome());
+		stmt.setString(3, d.getDataInicio());
+		stmt.setString(4, d.getDataTermino());
+		stmt.setString(5, d.getStatusDisciplina());
+		stmt.setString(6, d.getUsuario().getCodigo());
+		return stmt.executeUpdate();
+	}
+	
+	/**
+	 * Metodo que vizualiza uma Disciplina em especifico cadastrada
+	 * @author Holistic
+	 * @param codigo
+	 * @return Capitulo
+	 * @throws Exception
+	 * 	 
+	 */
+	public Disciplina consultarDisciplina(int codigo) throws Exception{
+		stmt=con.prepareStatement("SELECT * FROM T_SCB_DISCIPLINA WHERE CD_DISCIPLINA=?");
+		stmt.setInt(1, codigo);
+		
+		rs =stmt.executeQuery();
+		
+		if(rs.next()) {
+			Disciplina d = new Disciplina();
+			
+			d.setCodigo(rs.getInt("CD_DISCIPLINA"));
+			d.setNome(rs.getString("NM_DISCIPLINA"));
+			d.setDataInicio(rs.getString("DT_INICIO"));
+			d.setDataTermino(rs.getString("DT_TERMINO"));
+			d.setStatusDisciplina(rs.getString("DS_STATUS_DIS"));
+			d.setUsuario(new ProfessorDAO().getProfessors(rs.getString("CD_PROFESSOR")));
+			con.close();
+			return d;
+		}else {
+			con.close();
+			return null;
+		}
+	}
+	
+	/**
+	 * Metodo responsavel por Fechar a conexao com o Banco de Dados
+	 * @author Holistic
+	 * @param 
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public void fechar() throws Exception{
+		con.close();
+	}
+
+}

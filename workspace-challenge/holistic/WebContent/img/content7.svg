@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="800px"
+	 height="450px" viewBox="0 0 800 450" style="enable-background:new 0 0 800 450;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#477BAC;}
+	.st2{fill:#FFFFFF;stroke:#ACACAC;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#ACACAC;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:#ACACAC;stroke:#595959;stroke-width:3;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FF3366;stroke-width:3;stroke-miterlimit:10;}
+	.st6{fill:#FF3366;}
+	.st7{font-family:'Arial';font-weight:bold;}
+	.st8{font-size:17px;}
+	.st9{font-family:'Arial';}
+	.st10{font-size:19px;}
+	.st11{fill:none;}
+	.st12{font-size:16px;}
+</style>
+<rect class="st0" width="800" height="450"/>
+<rect x="154.7" y="208.7" class="st1" width="430" height="24.7"/>
+<rect x="154.7" y="239.7" class="st2" width="430" height="36.7"/>
+<line class="st3" x1="196" y1="276.3" x2="196" y2="239.3"/>
+<line class="st3" x1="239.3" y1="276.3" x2="239.3" y2="239.3"/>
+<line class="st3" x1="282.7" y1="276.3" x2="282.7" y2="239.3"/>
+<line class="st3" x1="326" y1="276.3" x2="326" y2="239.3"/>
+<line class="st3" x1="369.3" y1="276.3" x2="369.3" y2="239.3"/>
+<line class="st3" x1="412.7" y1="276.3" x2="412.7" y2="239.3"/>
+<line class="st3" x1="456" y1="276.3" x2="456" y2="239.3"/>
+<line class="st3" x1="499.3" y1="276.3" x2="499.3" y2="239.3"/>
+<line class="st3" x1="542.7" y1="276.3" x2="542.7" y2="239.3"/>
+<rect x="510.7" y="247.3" class="st4" width="20" height="20.7"/>
+<rect x="158.7" y="207" class="st5" width="27.3" height="27.3"/>
+<line class="st5" x1="172.3" y1="207" x2="172.3" y2="186.7"/>
+<line class="st5" x1="572.7" y1="222" x2="609.3" y2="222"/>
+<line class="st5" x1="518.7" y1="253.7" x2="472" y2="183.7"/>
+<text transform="matrix(1 0 0 1 111.2737 176.6611)" class="st6 st7 st8">Primeiro índice</text>
+<text transform="matrix(1 0 0 1 243.0162 303.6611)" class="st6 st9 st10">O comprimento da matriz é 10</text>
+<text transform="matrix(1 0 0 1 616.6829 228.3278)" class="st6 st9 st10">Índices</text>
+<text transform="matrix(1 0 0 1 429.7582 153.3278)" class="st6 st7 st8">Elemento</text>
+<text transform="matrix(1 0 0 1 417.9583 171.3278)" class="st6 st7 st8">(no índice 8)</text>
+<line class="st11" x1="511" y1="296.3" x2="584.7" y2="296.3"/>
+<line class="st5" x1="511" y1="296.3" x2="576.1" y2="296.3"/>
+<polygon class="st6" points="574.3,302.3 584.7,296.3 574.3,290.3 "/>
+<line class="st11" x1="154.7" y1="296.3" x2="230.3" y2="296.3"/>
+<line class="st5" x1="163.3" y1="296.3" x2="230.3" y2="296.3"/>
+<polygon class="st6" points="165,302.3 154.7,296.3 165,290.3 "/>
+<text transform="matrix(1 0 0 1 167.6994 226.661)" class="st0 st9 st12">0</text>
+<text transform="matrix(1 0 0 1 214.6994 227.661)" class="st0 st9 st12">1</text>
+<text transform="matrix(1 0 0 1 257.6994 227.661)" class="st0 st9 st12">2</text>
+<text transform="matrix(1 0 0 1 301.6994 227.661)" class="st0 st9 st12">3</text>
+<text transform="matrix(1 0 0 1 344.6994 227.661)" class="st0 st9 st12">4</text>
+<text transform="matrix(1 0 0 1 388.6994 227.661)" class="st0 st9 st12">5</text>
+<text transform="matrix(1 0 0 1 430.6994 227.661)" class="st0 st9 st12">6</text>
+<text transform="matrix(1 0 0 1 473.6994 227.661)" class="st0 st9 st12">7</text>
+<text transform="matrix(1 0 0 1 515.6833 227.661)" class="st0 st9 st12">8</text>
+<text transform="matrix(1 0 0 1 559.6671 227.661)" class="st0 st9 st12">9</text>
+</svg>

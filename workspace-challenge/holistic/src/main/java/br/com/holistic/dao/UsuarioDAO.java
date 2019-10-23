@@ -1,0 +1,209 @@
+package br.com.holistic.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import br.com.holistic.beans.Usuario;
+import br.com.holistic.conexao.Conexao;
+
+/**
+ * Classe responsavel por Estabeler a Conexao com o Banco de Dados entre UsuarioDAO e Conexao
+ * CD_ALUNO ,NR_SENHA,NM_ALUNO,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF
+ * CD_PROFESSOR ,NR_SENHA,NM_PROFESSOR,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF
+ * CD_ADMINISTRADOR ,NR_SENHA,NM_ADMINISTRADOR,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF
+ * CD_ALUNO, CD_PROFESSOR, CD_ADMINISTRADOR = PK
+ * @author Equipe Holistic
+ * @version 00.001
+ * @see br.com.holistic.dao
+ */
+public class UsuarioDAO {
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	/**
+	 * Metodo que estabelece conexao entre o UsuarioDAO e Conexao.
+	 * @param 
+	 * @return 
+	 * @throws Exception
+	 * 	 
+	 */
+	public UsuarioDAO() throws Exception{
+		con = Conexao.getConnectar();
+	}
+	
+	/**
+	 * Metodo que Cadastra um novo Usuario do tipo Aluno no Banco de Dados
+	 * @param new Usuario
+	 * @return int
+	 * @throws Exception
+	 * 	 
+	 */
+	public int addAluno(Usuario u) throws Exception{
+		
+		
+			stmt = con.prepareStatement("INSERT INTO T_SCB_ALUNO(CD_ALUNO ,NR_SENHA,NM_ALUNO,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF)VALUES(?,?,?,?,?,?,?)");
+			
+			stmt.setString(1, "RM" + u.getCodigo());
+			stmt.setString(2, u.getSenha());
+			stmt.setString(3, u.getNome());
+			stmt.setString(4, u.getDataNascimento());
+			stmt.setString(5, u.getGenero());
+			stmt.setString(6, u.getEmail());
+			stmt.setString(7, u.getCpf());
+			
+			return stmt.executeUpdate();
+	}		
+	
+	/**
+	 * Metodo que Cadastra um novo Usuario do tipo Professor no Banco de Dados
+	 * @param new Usuario
+	 * @return int
+	 * @throws Exception
+	 * 	 
+	 */
+	public int addProfessor(Usuario u) throws Exception{
+			stmt = con.prepareStatement("INSERT INTO T_SCB_PROFESSOR(CD_PROFESSOR ,NR_SENHA,NM_PROFESSOR,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF)VALUES(?,?,?,?,?,?,?)");
+			
+			stmt.setString(1, "P" + u.getCodigo());
+			stmt.setString(2, u.getSenha());
+			stmt.setString(3, u.getNome());
+			stmt.setString(4, u.getDataNascimento());
+			stmt.setString(5, u.getGenero());
+			stmt.setString(6, u.getEmail());
+			stmt.setString(7, u.getCpf());
+			
+			return stmt.executeUpdate();
+		}
+	
+	/**
+	 * Metodo que Cadastra um novo Usuario do tipo Administrador no Banco de Dados
+	 * @param new Usuario
+	 * @return int
+	 * @throws Exception
+	 * 	 
+	 */
+	public int addAdministrador(Usuario u) throws Exception{
+			stmt = con.prepareStatement("INSERT INTO T_SCB_ADMINISTRADOR(CD_ADMINISTRADOR ,NR_SENHA,NM_ADMINISTRADOR,DT_NASCIMENTO,DS_GENERO,DS_EMAIL,NR_CPF)VALUES(?,?,?,?,?,?,?)");
+			
+			stmt.setString(1, "A" + u.getCodigo());
+			stmt.setString(2, u.getSenha());
+			stmt.setString(3, u.getNome());
+			stmt.setString(4, u.getDataNascimento());
+			stmt.setString(5, u.getGenero());
+			stmt.setString(6, u.getEmail());
+			stmt.setString(7, u.getCpf());
+			
+			
+			return stmt.executeUpdate();
+		
+		
+		
+	}
+	
+	/**
+	 * Metodo que vizualiza um Usuario do tipo Aluno em especifico
+	 * @param codigo
+	 * @return Usuario
+	 * @throws Exception
+	 * 	 
+	 */
+	public Usuario getAluno(String codigo) throws Exception{
+		
+			stmt = con.prepareStatement("SELECT * FROM T_SCB_ALUNO where CD_ALUNO=?");
+			stmt.setString(1, codigo);
+			
+			rs =stmt.executeQuery();
+						
+			if(rs.next()) {
+								
+				return 
+						new Usuario(
+						rs.getString("CD_ALUNO"),
+						rs.getString("NR_SENHA"),
+						rs.getString("NM_ALUNO"), 
+						rs.getString("DT_NASCIMENTO"),
+						rs.getString("DS_GENERO"), 
+						rs.getString("DS_EMAIL"),
+						rs.getString("NR_CPF"));
+					
+			}else {
+				return new Usuario();
+		}
+	}
+	
+	/**
+	 * Metodo que vizualiza um Usuario do tipo Professor em especifico
+	 * @param codigo
+	 * @return Usuario
+	 * @throws Exception
+	 * 	 
+	 */
+	public Usuario getProfessor(String codigo) throws Exception{
+		
+		stmt = con.prepareStatement("SELECT * FROM T_SCB_ALUNO where CD_ALUNO=?");
+		stmt.setString(1, codigo);
+		
+		rs =stmt.executeQuery();
+					
+		if(rs.next()) {
+							
+			return 
+					new Usuario(
+					rs.getString("CD_ALUNO"),
+					rs.getString("NR_SENHA"),
+					rs.getString("NM_ALUNO"), 
+					rs.getString("DT_NASCIMENTO"),
+					rs.getString("DS_GENERO"), 
+					rs.getString("DS_EMAIL"),
+					rs.getString("NR_CPF"));
+				
+		}else {
+			return new Usuario();
+		}
+	}
+	
+	/**
+	 * Metodo que vizualiza um Usuario do tipo Administrador em especifico
+	 * @param codigo
+	 * @return Usuario
+	 * @throws Exception
+	 * 	 
+	 */
+	public Usuario getAdministrador(String codigo) throws Exception{
+		
+		stmt = con.prepareStatement("SELECT * FROM T_SCB_ALUNO where CD_ALUNO=?");
+		stmt.setString(1, codigo);
+		
+		rs =stmt.executeQuery();
+					
+		if(rs.next()) {
+							
+			return 
+					new Usuario(
+					rs.getString("CD_ALUNO"),
+					rs.getString("NR_SENHA"),
+					rs.getString("NM_ALUNO"), 
+					rs.getString("DT_NASCIMENTO"),
+					rs.getString("DS_GENERO"), 
+					rs.getString("DS_EMAIL"),
+					rs.getString("NR_CPF"));
+				
+		}else {
+			return new Usuario();
+		}
+	}
+	
+	/**
+	 * Metodo responsavel por Fechar a conexao com o Banco de Dados
+	 * @param 
+	 * @return void
+	 * @throws Exception
+	 * 	 
+	 */
+	public void fechar() throws Exception{
+		con.close();
+	}
+
+}
