@@ -5,9 +5,9 @@ O sistema consiste em uma plataforma de gestão educacional, onde cada tipo de u
 
 O Aluno consegue acessar o conteúdo de seu curso, sanar dúvidas do capítulo por meio de chatbot, o qual foi desenvolvido com a integração com o IBM Watson Assistant, e pode avaliar a disciplina.
 
-O Professor pode visualizar suas matérias e alunos.
+O Professor pode cadastrar disciplina e capítulo.
 
-O Administrador pode cadastrar os alunos, professores, disciplinas e capítulos.
+O Administrador pode verificar relatórios de alunos e avaliações.
 
 ## Tecnologias Utilizadas
 <ul>
