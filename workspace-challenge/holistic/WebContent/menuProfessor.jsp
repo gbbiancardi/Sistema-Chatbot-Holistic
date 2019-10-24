@@ -12,7 +12,7 @@
 	<c:choose>
 	<c:when test="${not empty usuario}">
     <header>
-      <a href="adm.jsp">Home</a>
+      <a href="index.jsp">Home</a>
     </header>
     <div class="options">
       <button><a href="professor.jsp">Adicionar Disciplina</a></button>
